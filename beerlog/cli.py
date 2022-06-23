@@ -47,6 +47,7 @@ def list_beers(style: Optional[str] = None):
         "rate",
         "date",
     ]
+
     for header in headers:
         table.add_column(header, style="magenta")
 

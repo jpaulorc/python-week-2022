@@ -11,4 +11,5 @@ def test_add_beer():
         ["add", "Skol", "KornPilsner", "--flavor=1", "--image=1", "--cost=3"],
     )
     assert result.exit_code == 0
+
     assert "beer added to database" in result.stdout

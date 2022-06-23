@@ -20,6 +20,7 @@ class Beer(SQLModel, table=True):
     def validate_ratings(cls, value, field):
         if value < 1 or value > 10:
             raise RuntimeError(f"{field.name} must be between 1 and 10")
+
         return value
 
     @validator("rate", always=True)

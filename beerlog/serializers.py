@@ -29,4 +29,5 @@ class BeerIn(BaseModel):
                 detail=f"{field.name} must be between 1 and 10",
                 status_code=status.HTTP_400_BAD_REQUEST,
             )
+
         return v
