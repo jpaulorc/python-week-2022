@@ -24,6 +24,5 @@ async def add_beer(beer_in: BeerIn, response: Response):
         session.add(beer)
         session.commit()
         session.refresh(beer)
-
     response.status_code = status.HTTP_201_CREATED
     return beer

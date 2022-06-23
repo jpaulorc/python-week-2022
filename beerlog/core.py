@@ -17,7 +17,6 @@ def add_beer_to_database(
         beer = Beer(**locals())
         session.add(beer)
         session.commit()
-
     return True
 
 

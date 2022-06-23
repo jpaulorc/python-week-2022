@@ -17,8 +17,6 @@ def test_add_beer_api():
         },
     )
     assert response.status_code == 201
-
     result = response.json()
-
     assert result["name"] == "Skol"
     assert result["id"] == 1
