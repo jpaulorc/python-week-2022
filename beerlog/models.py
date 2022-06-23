@@ -1,8 +1,9 @@
-from typing import Optional
-from sqlmodel import SQLModel, Field
-from pydantic import validator
-from statistics import mean
 from datetime import datetime
+from statistics import mean
+from typing import Optional
+
+from pydantic import validator
+from sqlmodel import Field, SQLModel
 
 
 class Beer(SQLModel, table=True):
@@ -24,6 +25,3 @@ class Beer(SQLModel, table=True):
     @validator("rate", always=True)
     def cauculate_rate(cls, value, values):
         return int(mean([values["flavor"], values["image"], values["cost"]]))
-
-
-brewdog = Beer(name="Brewdog", style="NEIPA", flavor=6, image=8, cost=8)

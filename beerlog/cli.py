@@ -37,7 +37,16 @@ def list_beers(style: Optional[str] = None):
     """
     beers = get_beers_from_database(style)
     table = Table(title="Brewlog :beer_mug:")
-    headers = ["id", "name", "style", "rate", "date"]
+    headers = [
+        "id",
+        "name",
+        "style",
+        "flavor",
+        "image",
+        "cost",
+        "rate",
+        "date",
+    ]
     for header in headers:
         table.add_column(header, style="magenta")
 

@@ -15,6 +15,7 @@ def add_beer_to_database(
         )
         session.add(beer)
         session.commit()
+        session.refresh(beer)
     return True
 
 
